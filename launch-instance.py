@@ -129,7 +129,7 @@ def main():
   account = args.account
 
   logger.createLog(os.path.basename(__file__)[:-3])
-  '''
+
   # Connect to EC2, create SecGroup if needed, start an instance
   ec2_resource = get_resource(account)
   logger.console('Connected to EC2')
@@ -156,6 +156,6 @@ def main():
 
 
 # This is the standard boilerplate that calls the main() function.
-'''
+
 if __name__ == '__main__':
   main()
