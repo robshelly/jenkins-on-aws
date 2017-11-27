@@ -94,7 +94,7 @@ def create_instance(ec2, ami, keyfile):
         'ResourceType': 'instance',
         'Tags': [
           {
-            'Key': 'name',
+            'Key': 'Name',
             'Value': 'jenkins-server'
           },
         ]

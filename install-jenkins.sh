@@ -1,11 +1,5 @@
 #!/bin/bash
 
-###########################################################################
-# This files is currently not designed to be run as a script
-# Rather it is a collection of commands used to get Jenkins up and running
-# on the instance (also install Docker and allo the Jenkins user to run it)
-###########################################################################
-
 # Install docker, nginx, git
 apt-get install -y docker.io nginx git
 
@@ -16,8 +10,6 @@ apt-get update -y
 apt-get install -y jenkins
 
 # Add jenkins user to docker group
-usermod -a -G docker jenkins
-# Not sure if above worked but this one does!
 gpasswd -a jenkins docker
 
 
@@ -63,7 +55,5 @@ export LC_ALL=C
 # Install aws cli
 pip install awscli --upgrade
 
-# Create file for docker credentials and give owvershipf it to the docker group
-# Maybe not necessary... just create the dockerhub credentials on Jenkins with the credentials plugin
-mkdir /home/ubuntu/.docker
-chown jenkins:docker /home/ubuntu/.docker/
+mkdir app
+chown jenkins: app
